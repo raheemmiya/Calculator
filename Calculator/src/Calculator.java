@@ -25,7 +25,7 @@ public class Calculator implements ActionListener {
     JButton dotButton;
     JButton eqButton;
 
-    double num1=0,num2=0,result=0;
+    double num1 = 0, num2 = 0, result = 0;
     char operator;
 
     public Calculator() {
@@ -111,35 +111,34 @@ public class Calculator implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e){
-       
+    public void actionPerformed(ActionEvent e) {
 
-        for ( int i = 0; i < numButton.length; i++) {
-            if (e.getSource()==numButton[i]) {
+        for (int i = 0; i < numButton.length; i++) {
+            if (e.getSource() == numButton[i]) {
                 textField.setText(textField.getText().concat(String.valueOf(i)));
             }
         }
-        if (e.getSource()==dotButton) {
+        if (e.getSource() == dotButton) {
             textField.setText(textField.getText().concat("."));
         }
-        if (e.getSource()==addButton) {
+        if (e.getSource() == addButton) {
             num1 = Double.parseDouble(textField.getText());
-            operator ='+';
+            operator = '+';
             textField.setText("");
         }
-        if (e.getSource()==subButton) {
+        if (e.getSource() == subButton) {
             num1 = Double.parseDouble(textField.getText());
-            operator ='-';
+            operator = '-';
             textField.setText("");
         }
-        if (e.getSource()==mulButton) {
+        if (e.getSource() == mulButton) {
             num1 = Double.parseDouble(textField.getText());
-            operator ='*';
+            operator = '*';
             textField.setText("");
         }
-        if (e.getSource()==divButton) {
+        if (e.getSource() == divButton) {
             num1 = Double.parseDouble(textField.getText());
-            operator ='/';
+            operator = '/';
             textField.setText("");
         }
 
@@ -147,112 +146,36 @@ public class Calculator implements ActionListener {
             num2 = Double.parseDouble(textField.getText());
             switch (operator) {
                 case '+':
-                    result = num1+num2;
+                    result = num1 + num2;
                     break;
 
                 case '-':
-                result =num1-num2;
-                break;
+                    result = num1 - num2;
+                    break;
 
                 case '/':
-                result =num1/num2;
-                break;
+                    result = num1 / num2;
+                    break;
 
                 case '*':
-                result =num1*num2;
-                break;
+                    result = num1 * num2;
+                    break;
 
                 default:
                     break;
             }
             textField.setText(String.valueOf(result));
-            num1=result;
+            num1 = result;
         }
 
-        if (e.getSource()==delButton) {
+        if (e.getSource() == delButton) {
             String temp = textField.getText();
             textField.setText("");
-           for (int i = 0; i < temp.length()-1; i++) {
-            textField.setText(textField.getText()+temp.charAt(i));
-           }
+            for (int i = 0; i < temp.length() - 1; i++) {
+                textField.setText(textField.getText() + temp.charAt(i));
+            }
         }
-    
 
-
-
-
-
-
-
-        // int num1=0; 
-        // int num2=0; 
-        // int result=12;
-        // for (int i = 0; i < numButton.length; i++) {
-        //     if (e.getSource()==numButton[i]) {
-                
-        //        if (i==0) {
-        //         num1 =0; 
-        //        }
-        //        if (i==1) {
-        //         num1=1;
-        //        }
-        //        if (i==2) {
-        //         num1=2;
-        //        }
-        //        if (i==3) {
-        //         num1=3;
-        //        }
-        //        if (i==4) {
-        //         num1=4;
-        //        }
-        //        if (i==5) {
-        //         num1=5;
-        //        }
-        //        if (i==6) {
-        //         num1=6;
-        //        }
-        //        if (i==7) {
-        //         num1=7;
-        //        }
-        //        if (i==8) {
-        //         num1=8;
-        //        }
-        //        if (i==9) {
-        //         num1=9;
-        //        }
-        //     }
-        // }
-
-        // try {
-            
-        //     for (int i = 0; i < 7; i++) {
-        //         if (e.getSource() == opButton[i]) {
-        //             if (i==0) {
-        //                 result = num1+num2;
-        //             }
-        //             if (i==1) {
-        //                 result = num1-num2; 
-        //             }
-        //             if (i==2) {
-        //                 result = num1 * num2;
-        //             }
-        //             if (i==3) {
-        //                 result = num1/ num2;
-        //             }
-        //             if (i==4) {
-                        
-        //             }
-        //             if (i==5) {
-                        
-        //             }
-        //             if (i==6) {
-        //                num1=num1/10;
-        //             }
-        //         }
-        //     }
-        // } catch (Exception ex) {
-        //     ex.printStackTrace();
-        // }
     }
 
     public static void main(String[] args) {
